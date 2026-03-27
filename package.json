@@ -39,7 +39,8 @@
     "test:e2e": "playwright test",
     "test:spec": "stencil test --spec",
     "test.watch": "stencil test --spec --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "deploy": "bash scripts/deploy-gh-pages.sh"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",

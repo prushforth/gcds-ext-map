@@ -97,6 +97,22 @@ npm test
 npm run build && npm run build-storybook && npm run storybook
 ```
 
+## Deploying to GitHub Pages
+
+The documentation site is deployed to the `gh-pages` branch. Run the deploy script from the **`main` branch**:
+
+```bash
+npm run deploy                    # full build + assemble + push
+npm run deploy -- --skip-build    # assemble only (reuse existing build artifacts)
+```
+
+**Prerequisites:**
+- You must be on the `main` branch with a clean working tree
+- The sibling repo `../gcds-docs` must exist locally
+- npm dependencies installed in both repos
+
+The script builds gcds-map (Stencil + Storybook) and gcds-docs (Eleventy with `PATH_PREFIX=/gcds-map`), then assembles the results into `gh-pages:docs/`. It amends the previous gh-pages commit and prompts you to force-push to `upstream`.
+
 ## Accessibility
 
 The `<gcds-map>` component includes several accessibility features:
