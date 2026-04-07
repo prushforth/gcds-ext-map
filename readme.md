@@ -14,7 +14,7 @@ This component requires the following peer dependencies:
 
 ```json
 {
-  "@cdssnc/gcds-components": "^x.x.x",
+  "@gcds-core/components": "^1.1.0",
 }
 ```
 

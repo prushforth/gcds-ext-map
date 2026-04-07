@@ -17,7 +17,7 @@
     "jsxFactory": "h",
     "jsxFragmentFactory": "h.Fragment",
     "resolveJsonModule": true,
-    "types": ["@stencil/core", "@cdssnc/gcds-components", "node"]
+    "types": ["@stencil/core", "@gcds-core/components", "node"]
   },
   "include": [
     "src"

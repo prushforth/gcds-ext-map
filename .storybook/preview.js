@@ -1,5 +1,5 @@
 import {defineCustomElements} from '../dist/esm/loader';
-import {defineCustomElements as defineGcdsComponents} from '@cdssnc/gcds-components/loader';
+import {defineCustomElements as defineGcdsComponents} from '@gcds-core/components/loader';
 
 import gcdsTheme from './gcds-theme';
 
