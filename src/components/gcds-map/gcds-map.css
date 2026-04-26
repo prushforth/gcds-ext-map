@@ -16,12 +16,162 @@
 /* Import Leaflet locate control CSS */
 @import '~leaflet.locatecontrol/dist/L.Control.Locate.css';
 
+/* -- GC Design System Fonts - Lato -- */
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/lato/gcds-lato.woff2') format('woff2'),
+    url('fonts/lato/gcds-lato.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/lato/gcds-lato-italic.woff2') format('woff2'),
+    url('fonts/lato/gcds-lato-italic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* -- GC Design System Fonts - Noto Sans -- */
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-light.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-light-italic.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-light-italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-regular.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-regular-italic.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-regular-italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-medium.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-medium-italic.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-medium-italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-semibold.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-semibold-italic.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-semibold-italic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-bold.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('fonts/noto-sans/gcds-noto-sans-bold-italic.woff2') format('woff2'),
+    url('fonts/noto-sans/gcds-noto-sans-bold-italic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* -- GC Design System Fonts - Noto Sans Mono -- */
+@font-face {
+  font-family: 'Noto Sans Mono';
+  src: url('fonts/noto-sans-mono/gcds-noto-sans-mono.woff2') format('woff2'),
+    url('fonts/noto-sans-mono/gcds-noto-sans-mono.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* -- GC Design System Fonts - Icons -- */
+@font-face {
+  font-family: 'gcds-icons';
+  src: url('fonts/icons/gcds-icons.eot');
+  src: url('fonts/icons/gcds-icons.eot#iefix') format('embedded-opentype'),
+    url('fonts/icons/gcds-icons.ttf') format('truetype'),
+    url('fonts/icons/gcds-icons.woff') format('woff'),
+    url('fonts/icons/gcds-icons.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='gcds-icon-'],
+[class*=' gcds-icon-'] {
+  font-family: 'gcds-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gcds-icon-checkmark-circle:before { content: '\e908'; }
+.gcds-icon-chevron-down:before { content: '\e900'; }
+.gcds-icon-chevron-left:before { content: '\e901'; }
+.gcds-icon-chevron-right:before { content: '\e902'; }
+.gcds-icon-chevron-up:before { content: '\e903'; }
+.gcds-icon-close:before { content: '\e90b'; }
+.gcds-icon-download:before { content: '\e906'; }
+.gcds-icon-email:before { content: '\e905'; }
+.gcds-icon-exclamation-circle:before { content: '\e909'; }
+.gcds-icon-external:before { content: '\e904'; }
+.gcds-icon-info-circle:before { content: '\e90a'; }
+.gcds-icon-phone:before { content: '\e90c'; }
+.gcds-icon-search:before { content: '\e907'; }
+.gcds-icon-warning-triangle:before { content: '\e90d'; }
+
 /* copy of original mapml.css from MapML.js submodule */
 
 .leaflet-container {
   /* Override the `background-color` set by leaflet.css, enables inheritance from
      the map or <body> element (same as iframes) to give the author more control. */
   background-color: transparent;
+  /* Override Leaflet's Helvetica Neue/Arial stack with GCDS body font */
+  font-family: var(--gcds-font-families-body, 'Noto Sans', sans-serif);
   max-height: 100%;
   max-width: 100%;
   min-height: 100%;
@@ -108,7 +258,7 @@ the browser)' */
 .leaflet-control-container a,
 .leaflet-container a.leaflet-popup-close-button,
 .leaflet-container a.leaflet-popup-close-button:hover {
-  color: #000;
+  color: var(--gcds-color-black, #000);
 }
 /* Revert above `color: #000` for legendlinks. */
 .mapml-layer-item-name a {
@@ -125,7 +275,7 @@ the browser)' */
 
 .leaflet-bar a,
 .mapml-reload-button {
-  background-color: #fff;
+  background-color: var(--gcds-color-white, #fff);
   box-sizing: border-box;
   width: 44px !important;
   height: 44px !important;
@@ -137,7 +287,7 @@ the browser)' */
 
 .mapml-reload-button:hover,
 .mapml-reload-button[aria-disabled="true"] {
-  background-color: #f4f4f4;
+  background-color: var(--gcds-bg-light, #f4f4f4);
 }
 
 .mapml-reload-button[aria-disabled="true"] {
@@ -146,7 +296,7 @@ the browser)' */
 
 button.mapml-button:disabled,
 .mapml-button[aria-disabled="true"] {
-  color: #bbb;
+  color: var(--gcds-disabled-text, #bbb);
 }
 
 button.mapml-contextmenu-item:disabled {
@@ -161,20 +311,20 @@ button.mapml-contextmenu-item:disabled {
 .leaflet-bar a,
 .leaflet-control-layers,
 .mapml-reload-button {
-  border-color: #e3e3e3 !important;
+  border-color: var(--gcds-color-grayscale-100, #e3e3e3) !important;
 }
 
 .leaflet-control-layers,
 .mapml-reload-button {
-  border-radius: 4px !important;
+  border-radius: var(--gcds-border-radius-md, 4px) !important;
 }
 .leaflet-touch .leaflet-bar a:last-child {
-  border-bottom-left-radius: 4px !important;
-  border-bottom-right-radius: 4px !important;
+  border-end-start-radius: var(--gcds-border-radius-md, 4px) !important;
+  border-end-end-radius: var(--gcds-border-radius-md, 4px) !important;
 }
 .leaflet-touch .leaflet-bar a:first-child {
-  border-top-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
+  border-start-start-radius: var(--gcds-border-radius-md, 4px) !important;
+  border-start-end-radius: var(--gcds-border-radius-md, 4px) !important;
 }
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
@@ -195,10 +345,32 @@ button.mapml-contextmenu-item:disabled {
   box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px -1px;
 }
 
-/* Remove opinionated styles of attribution links. */
+/* GCDS link styles for attribution links. */
 .leaflet-control-attribution a {
-  color: revert;
+  color: var(--gcds-link-default);
   text-decoration: revert;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration-thickness: var(--gcds-link-hover-decoration-thickness);
+      color: var(--gcds-link-hover);
+    }
+  }
+
+  &:visited:not(:focus) {
+    color: var(--gcds-link-visited);
+  }
+
+  &:focus {
+    background-color: var(--gcds-link-focus-background);
+    color: var(--gcds-link-focus-text);
+    border-radius: var(--gcds-link-focus-border-radius);
+    box-shadow: var(--gcds-link-focus-box-shadow);
+    outline: var(--gcds-link-focus-outline-width) solid
+      var(--gcds-link-focus-background);
+    outline-offset: var(--gcds-link-focus-outline-offset);
+    text-decoration: none;
+  }
 }
 
 
@@ -207,10 +379,10 @@ button.mapml-contextmenu-item:disabled {
  */
 
 .leaflet-container .leaflet-control-attribution {
-  background-color: #fff;
+  background-color: var(--gcds-bg-white, #fff);
   border-radius: 1.5em;
   color: currentColor;
-  margin: 5px;
+  margin: var(--gcds-spacing-50, 5px);
   min-height: 30px;
   min-width: 30px;
   padding: 0;
@@ -285,8 +457,8 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
  */
 
 .leaflet-control-layers.leaflet-control {
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-inline-end: 5px;
+  margin-inline-start: 5px;
   padding: 0;
 }
 
@@ -306,9 +478,9 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
 
 .mapml-control-layers > :not(summary) {
   display: block;
-  margin-block-start: 5px;
-  margin-inline-start: 15px;
-  width: calc(100% - 15px);
+  margin-block-start: var(--gcds-spacing-50, 5px);
+  margin-inline-start: var(--gcds-spacing-175, 15px);
+  width: calc(100% - var(--gcds-spacing-175, 15px));
 }
 
 .mapml-layer-item-style > div {
@@ -335,9 +507,9 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
  */
 
 .mapml-contextmenu {
-  border-radius: 4px;
-  padding: 4px 0;
-  background-color: #fff;
+  border-radius: var(--gcds-border-radius-md, 4px);
+  padding: var(--gcds-spacing-50, 4px) 0;
+  background-color: var(--gcds-bg-white, #fff);
   cursor: default;
   position: absolute;
   width: fit-content;
@@ -346,32 +518,32 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
 }
 
 .mapml-contextmenu button.mapml-contextmenu-item {
-  color: #222;
+  color: var(--gcds-text-primary, #222);
   font-size: 12px;
   line-height: 20px;
   text-decoration: none;
-  padding: 0 12px;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  padding: 0 var(--gcds-spacing-150, 12px);
+  border-block-start: var(--gcds-border-width-sm, 1px) solid transparent;
+  border-block-end: var(--gcds-border-width-sm, 1px) solid transparent;
   cursor: default;
   width: 100%;
   display: block;
 }
 
 .mapml-contextmenu button.mapml-contextmenu-item.over {
-  background-color: #f4f4f4;
-  border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  background-color: var(--gcds-bg-light, #f4f4f4);
+  border-block-start: var(--gcds-border-width-sm, 1px) solid var(--gcds-bg-light, #f0f0f0);
+  border-block-end: var(--gcds-border-width-sm, 1px) solid var(--gcds-bg-light, #f0f0f0);
 }
       
 .mapml-contextmenu-separator {
-  border-bottom: 1px solid #e3e3e3;
-  margin: 5px 0;
+  border-block-end: var(--gcds-border-width-sm, 1px) solid var(--gcds-color-grayscale-100, #e3e3e3);
+  margin: var(--gcds-spacing-50, 5px) 0;
 }
 
 .mapml-contextmenu.mapml-submenu {
   width: 80px;
-  margin-bottom: -2rem;
+  margin-block-end: -2rem;
   width: fit-content;
 }
 
@@ -407,17 +579,17 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
   contain: content;
   max-height: 100%;
   max-width: 100%;
-  border-radius: 4px;
-  padding: 5px 10px;
-  background-color: #fff;
+  border-radius: var(--gcds-border-radius-md, 4px);
+  padding: var(--gcds-spacing-50, 5px) var(--gcds-spacing-125, 10px);
+  background-color: var(--gcds-bg-white, #fff);
   cursor: default;
   z-index: 1000;
   position: absolute;
   display: block;
   top: auto;
-  right: 5px;
-  bottom: 5px;
-  left: 5px;
+  inset-inline-end: var(--gcds-spacing-50, 5px);
+  inset-block-end: var(--gcds-spacing-50, 5px);
+  inset-inline-start: var(--gcds-spacing-50, 5px);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -428,14 +600,13 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
   font-weight: bold;
   text-transform: uppercase;
   display: inline-block;
-  text-align: left;
   text-align: inline-start;
   line-height: 2;
 }
 
 .mapml-debug-panel,
 .mapml-debug-grid {
-  font-family: monospace;
+  font-family: var(--gcds-font-families-monospace, monospace);
 }
 
 .mapml-debug-tile {
@@ -444,8 +615,8 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
 }
 
 .mapml-debug-coordinates {
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-inline-start: var(--gcds-spacing-50, 4px);
+  padding-inline-end: var(--gcds-spacing-50, 4px);
 }
 
 .mapml-debug,
@@ -463,8 +634,8 @@ and: https://developer.mozilla.org/en-US/docs/Web/CSS/:fullscreen */
 }
 
 :host(.mapml-fullscreen-on) .mapml-debug-grid {
-  color: #fff;
-  text-shadow: 1px 1px 1px #000, 1px 1px 1px #000;
+  color: var(--gcds-color-white, #fff);
+  text-shadow: 1px 1px 1px var(--gcds-color-black, #000), 1px 1px 1px var(--gcds-color-black, #000);
 }
 
 /*
@@ -597,10 +768,11 @@ summary {
 }
 
 .mapml-popup-button {
-	padding: 0 4px 0 4px;
+	padding: 0 var(--gcds-spacing-50, 4px) 0 var(--gcds-spacing-50, 4px);
 	border: none;
 	text-align: center;
-	font: 16px/14px Tahoma, Verdana, sans-serif;
+	font-size: 16px;
+	line-height: 14px;
 	color: inherit;
 	text-decoration: none;
 	font-weight: bold;
@@ -625,7 +797,7 @@ summary {
   display:inline;
   white-space: nowrap;
   text-align: center;
-  padding: 2px;
+  padding: var(--gcds-spacing-25, 2px);
 }
 
 .mapml-focus-buttons button,
@@ -642,7 +814,7 @@ summary {
   scrollbar-width: thin;
 }
 .mapml-popup-content {
-  padding-top: 44px;
+  padding-block-start: 44px;
 }
 .mapml-focus-buttons {
   display: block;
@@ -658,20 +830,20 @@ summary {
 }
 .leaflet-popup-content .mapml-feature-count {
   margin: 0;
-  padding: 0 5px;
+  padding: 0 var(--gcds-spacing-50, 5px);
   line-height: 44px;
 }
 .mapml-popup-content hr:last-of-type {
-  margin-bottom: 0;
-  border-bottom: 0;
-  border-top: 1px solid #e3e3e3;
+  margin-block-end: 0;
+  border-block-end: 0;
+  border-block-start: var(--gcds-border-width-sm, 1px) solid var(--gcds-color-grayscale-100, #e3e3e3);
 }
 .mapml-popup-content :first-child {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
 }
 .mapml-popup-content > :not(.mapml-focus-buttons) {
-  padding: 0 1rem;
+  padding: 0 var(--gcds-spacing-200, 1rem);
 }
 .leaflet-popup-tip-container {
   margin-top: -1px;
@@ -705,17 +877,20 @@ svg.leaflet-image-layer.leaflet-interactive g {
 
 .mapml-link-preview {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: rgb(222,225,230);
-  border-radius: 0 5px 0 0 ;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  background-color: var(--gcds-color-grayscale-100, rgb(222, 225, 230));
+  border-start-end-radius: var(--gcds-spacing-50, 5px);
   z-index: 1050;  
   max-width: 60%;
 }
 
 .mapml-link-preview > p {
-  margin: 3px 5px 2px 3px;
-  color: rgb(60,64,67);
+  margin-block-start: 3px;
+  margin-inline-end: var(--gcds-spacing-50, 5px);
+  margin-block-end: var(--gcds-spacing-25, 2px);
+  margin-inline-start: 3px;
+  color: var(--gcds-text-secondary, rgb(60, 64, 67));
   text-overflow: ellipsis;
   overflow-x: hidden;
   white-space: nowrap;
@@ -741,29 +916,29 @@ svg.leaflet-image-layer.leaflet-interactive g {
 .mapml-layer-item,
 .mapml-layer-grouped-extents,
 .mapml-layer-extent {
-  background-color: #fff;
-  border: 1px solid #fff;
+  background-color: var(--gcds-bg-white, #fff);
+  border: var(--gcds-border-width-sm, 1px) solid var(--gcds-bg-white, #fff);
   margin: 0;
   padding: 0;
 }
 
 .mapml-layer-item:not(:last-of-type) {
-  border-bottom: 1px solid #e3e3e3;
+  border-block-end: var(--gcds-border-width-sm, 1px) solid var(--gcds-color-grayscale-100, #e3e3e3);
 }
 .mapml-layer-item[aria-grabbed="true"],
 .mapml-layer-extent[aria-grabbed="true"] {
-  border: 1px solid #e3e3e3;
+  border: var(--gcds-border-width-sm, 1px) solid var(--gcds-color-grayscale-100, #e3e3e3);
   border-radius: 0;
 }
 .mapml-layer-item:first-of-type,
 .mapml-layer-extent:first-of-type {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-start-start-radius: var(--gcds-border-radius-md, 4px);
+  border-start-end-radius: var(--gcds-border-radius-md, 4px);
 }
 .mapml-layer-item:last-of-type,
 .mapml-layer-extent:last-of-type {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-end-start-radius: var(--gcds-border-radius-md, 4px);
+  border-end-end-radius: var(--gcds-border-radius-md, 4px);
 }
 
 .mapml-layer-item-properties {
@@ -906,13 +1081,13 @@ label.mapml-layer-item-toggle {
   top: 50%;
   position: absolute;
   z-index: 10000;
-  outline: 2px solid #fff;
+  outline: var(--gcds-border-width-md, 2px) solid var(--gcds-bg-white, #fff);
 }
 
 .mapml-feature-index-box:after{
   display: block;
   content: '';
-  padding-top: 100%;
+  padding-block-start: 100%;
 }
 
 .mapml-feature-index-box > svg {
@@ -922,10 +1097,10 @@ label.mapml-layer-item-toggle {
 }
 
 .mapml-feature-index {
-  outline: 1px solid #000000;
+  outline: var(--gcds-border-width-sm, 1px) solid var(--gcds-color-black, #000000);
   contain: content;
-  border-radius: 4px;
-  background-color: #fff;
+  border-radius: var(--gcds-border-radius-md, 4px);
+  background-color: var(--gcds-bg-white, #fff);
   cursor: default;
   z-index: 1000;
   position: absolute;
@@ -934,7 +1109,7 @@ label.mapml-layer-item-toggle {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   bottom: 30px;
-  padding-top: 5px;
+  padding-block-start: var(--gcds-spacing-50, 5px);
   height: 92px;
   width: 450px;
   font-size: 16px;
@@ -955,16 +1130,16 @@ label.mapml-layer-item-toggle {
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-inline-start: var(--gcds-spacing-50, 5px);
+  padding-inline-end: var(--gcds-spacing-50, 5px);
 }
 
 .shortcuts-dialog > ul > li > kbd,
 .mapml-feature-index-content > span > kbd{
-  background-color: lightgrey;
-  padding-right: 4px;
-  padding-left: 4px;
-  border-radius: 4px;
+  background-color: var(--gcds-color-grayscale-150, lightgrey);
+  padding-inline-end: var(--gcds-spacing-50, 4px);
+  padding-inline-start: var(--gcds-spacing-50, 4px);
+  border-radius: var(--gcds-border-radius-md, 4px);
 }
 
 .mapml-feature-index-content > span > span{
@@ -978,7 +1153,19 @@ label.mapml-layer-item-toggle {
 }
 
 .shortcuts-dialog > button{
-  font-size: inherit;
+  position: absolute;
+  inset-inline-end: var(--gcds-spacing-100, 8px);
+  inset-block-start: var(--gcds-spacing-100, 8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  padding: var(--gcds-spacing-50, 4px);
+  line-height: 1;
+}
+
+.shortcuts-dialog {
+  position: relative;
 }
 
 .shortcuts-dialog > ul {
