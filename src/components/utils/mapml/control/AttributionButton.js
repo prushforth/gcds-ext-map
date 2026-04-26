@@ -29,7 +29,7 @@ export var AttributionButton = Control.Attribution.extend({
     };
     let locale = this._getLocale();
     dialog.innerHTML =
-      `<b>${locale.kbdShortcuts} </b><button aria-label="Close" onclick='this.parentElement.close()'>X</button>` +
+      `<b>${locale.kbdShortcuts} </b><button aria-label="Close" onclick='this.parentElement.close()'><span class="gcds-icon-close" aria-hidden="true"></span></button>` +
       `<ul><b>${locale.kbdMovement}</b><li><kbd>&#8593</kbd> ${locale.kbdPanUp}</li><li><kbd>&#8595</kbd> ${locale.kbdPanDown}</li><li><kbd>&#8592</kbd> ${locale.kbdPanLeft}</li><li><kbd>&#8594</kbd> ${locale.kbdPanRight}</li><li><kbd>+</kbd> ${locale.btnZoomIn}</li><li><kbd>-</kbd> ${locale.btnZoomOut}</li><li><kbd>shift</kbd> + <kbd>&#8592/&#8593/&#8594/&#8595</kbd> 3x ${locale.kbdPanIncrement}</li><li><kbd>ctrl</kbd> + <kbd>&#8592/&#8593/&#8594/&#8595</kbd> 0.2x ${locale.kbdPanIncrement}</li><li><kbd>shift</kbd> + <kbd>+/-</kbd> ${locale.kbdZoom}</li></ul>` +
       `<ul><b>${locale.kbdFeature}</b><li><kbd>&#8592/&#8593</kbd> ${locale.kbdPrevFeature}</li><li><kbd>&#8594/&#8595</kbd> ${locale.kbdNextFeature}</li></ul>`;
     map._container.appendChild(dialog);

@@ -20,11 +20,48 @@ This component requires the following peer dependencies:
 }
 ```
 
+### GCDS Styles and Fonts
+
+The `<gcds-map>` component integrates with the GC Design System in two ways:
+
+1. **Fonts** (`@gcds-core/fonts`) — bundled directly into the component at build time. Font files (Noto Sans, Lato, Noto Sans Mono, gcds-icons) are copied into the build output and declared via `@font-face` rules inside the component's shadow DOM CSS. The consuming app does **not** need to load these separately.
+
+2. **Design tokens** (`@gcds-core/tokens`) — referenced at build time for token documentation/values. At runtime, the component's CSS uses `var(--gcds-*, fallback)` for colors, spacing, border-radius, and font-family. When the host page loads `@gcds-core/components` CSS (the peer dependency), the tokens resolve to GCDS values that inherit into the shadow DOM. Without it, the component falls back to its default MapML appearance.
+
+To get the full GCDS look, include the peer dependency in your host page:
+
+```html
+<!-- GCDS component styles (provides design tokens on :root) -->
+<link rel="stylesheet" href="https://cdn.design-system.canada.ca/@gcds-core/components@latest/dist/gcds/gcds.css" />
+
+<!-- GCDS custom elements (optional, only if using gcds-button, gcds-header, etc. alongside the map) -->
+<script type="module" src="https://cdn.design-system.canada.ca/@gcds-core/components@latest/dist/gcds/gcds.esm.js"></script>
+```
+
+Or if installing locally:
+
+```bash
+npm install @gcds-core/components
+```
+
+Then link to `node_modules/@gcds-core/components/dist/gcds/gcds.css` from your HTML.
+
 ## Usage
 
 ### Basic Example
 
 ```html
+<!--
+  If installed locally (npm install gcds-map @gcds-core/components):
+    <script type="module" src="./node_modules/gcds-map/dist/gcds-map/gcds-map.esm.js"></script>
+    <link rel="stylesheet" href="./node_modules/@gcds-core/components/dist/gcds/gcds.css" />
+    <script type="module" src="./node_modules/@gcds-core/components/dist/gcds/gcds.esm.js"></script>
+  If using a CDN, use the tags below:
+-->
+<script type="module" src="https://cdn.design-system.canada.ca/gcds-map@latest/dist/gcds-map/gcds-map.esm.js"></script>
+<link rel="stylesheet" href="https://cdn.design-system.canada.ca/@gcds-core/components@latest/dist/gcds/gcds.css" />
+<script type="module" src="https://cdn.design-system.canada.ca/@gcds-core/components@latest/dist/gcds/gcds.esm.js"></script>
+
 <gcds-map projection="OSMTILE" lat="45.4215" lon="-75.6972" zoom="10">
   <!-- this won't display anything because geogratis is out of date... -->
   <map-layer checked src="https://geogratis.gc.ca/mapml/en/osmtile/osm/"></map-layer>

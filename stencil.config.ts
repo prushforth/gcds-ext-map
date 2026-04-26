@@ -81,6 +81,11 @@ export const config: Config = {
         {
           src: '../node_modules/leaflet/dist/leaflet-src.esm.js',
           dest: 'leaflet-src.esm.js'
+        },
+        // Copy GCDS fonts to build output
+        {
+          src: '../node_modules/@gcds-core/fonts/fonts',
+          dest: 'fonts'
         }
       ],
     },
@@ -171,6 +176,11 @@ export const config: Config = {
         {
           src: '../node_modules/leaflet/dist/leaflet-src.esm.js',
           dest: 'leaflet-src.esm.js'
+        },
+        // Copy GCDS fonts to build output
+        {
+          src: '../node_modules/@gcds-core/fonts/fonts',
+          dest: 'fonts'
         }
       ],
     },

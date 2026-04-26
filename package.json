@@ -47,6 +47,8 @@
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-typescript": "^7.27.1",
+    "@gcds-core/fonts": "^1.0.0",
+    "@gcds-core/tokens": "^1.2.0",
     "@playwright/test": "^1.54.0",
     "@stencil/core": "^4.38.2",
     "@stencil/playwright": "^0.2.1",
