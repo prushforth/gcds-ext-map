@@ -18,24 +18,27 @@ export default {
     lat: {
       name: 'lat',
       control: { type: 'number' },
+      description: 'A decimal number between +/- 90. Positive numbers are north of the equator. Latitudes which are meaningful depend on the projection system used. | Un nombre décimal entre +/- 90. Les nombres positifs sont au nord de l\'équateur. Les latitudes significatives dépendent du système de projection utilisé.',
       table: {
-        type: { summary: 'A decimal number between +/- 90.  Positive numbers are north of the equator. Latitudes which are meaningful depend on the projection system used. | Un nombre décimal entre +/- 90. Les nombres positifs sont au nord de l\'équateur. Les latitudes significatives dépendent du système de projection utilisé.' },
+        type: { summary: 'number' },
         defaultValue: { summary: '0' }
       }
     },
     lon: {
       name: 'lon',
       control: { type: 'number', min: -180.0, max: +180.0 },
+      description: 'A decimal number between +/- 180. Positive numbers are east of the meridian at Greenwich, UK. Longitudes which are meaningful depend on the projection system used. | Un nombre décimal entre +/- 180. Les nombres positifs sont à l\'est du méridien de Greenwich, R.-U. Les longitudes significatives dépendent du système de projection utilisé.',
       table: {
-        type: { summary: 'A decimal number between +/- 180.  Positive numbers are east of the meridian at Greenwich, UK.  Longitudes which are meaningful depend on the projection system used. | Un nombre décimal entre +/- 180. Les nombres positifs sont à l\'est du méridien de Greenwich, R.-U. Les longitudes significatives dépendent du système de projection utilisé.' },
+        type: { summary: 'number' },
         defaultValue: { summary: '0' }
       }
     },
     zoom: {
       name: 'zoom',
       control: { type: 'number' },
+      description: 'A non-negative integer, up to 26, used as a proxy for map scale. The map scale associated to a zoom value depends on the tiled coordinate reference system. | Un entier non négatif, jusqu\'à 26, utilisé comme indicateur de l\'échelle de la carte. L\'échelle associée à une valeur de zoom dépend du système de référence de coordonnées tuilé.',
       table: {
-        type: { summary: 'A non-negative integer, up to 26, used as a proxy for map scale. The map scale associated to a zoom value depends on the tiled coordinate reference system. | Un entier non négatif, jusqu\'à 26, utilisé comme indicateur de l\'échelle de la carte. L\'échelle associée à une valeur de zoom dépend du système de référence de coordonnées tuilé.' },
+        type: { summary: 'number' },
         defaultValue: { summary: '0' }
       }
     },
@@ -43,8 +46,9 @@ export default {
       name: 'projection',
       control: { type: 'select' },
       options: ['OSMTILE', 'CBMTILE','APSTILE', 'WGS84'],
+      description: 'A case-sensitive string token identifier of a standard or custom MapML tiled coordinate reference system. The ":" character is not allowed. | Un identifiant de jeton de chaîne sensible à la casse d\'un système de référence de coordonnées tuilé MapML standard ou personnalisé. Le caractère « : » n\'est pas autorisé.',
       table: {
-        type: { summary: 'A case-sensitive string token identifier of a standard or custom MapML tiled coordinated reference system. The "\:" character is not allowed. | Un identifiant de jeton de chaîne sensible à la casse d\'un système de référence de coordonnées tuilé MapML standard ou personnalisé. Le caractère « \: » n\'est pas autorisé.' },
+        type: { summary: 'string' },
         defaultValue: { summary: 'OSMTILE' }
       }
     },
@@ -53,8 +57,9 @@ export default {
       control: 'select',
       options: Object.keys(layerMap),
       mapping: layerMap,
+      description: 'Layers are specified by one or more \<map-layer\> elements. | Les couches sont spécifiées par un ou plusieurs éléments \<map-layer\>.',
       table: {
-        type: { summary: 'Layers are specified by one or more \<map-layer\> elements. | Les couches sont spécifiées par un ou plusieurs éléments \<map-layer\>.' },
+        type: { summary: 'element' },
         defaultValue: { summary: '-' }
       }
     },
@@ -62,41 +67,46 @@ export default {
       name: 'lang',
       control: { type: 'select' },
       options: ['en', 'fr'],
+      description: 'The language of the map viewer user interface. May be specified on any ancestor element, especially \<html lang=\>. | La langue de l\'interface utilisateur du visualiseur de carte. Peut être spécifiée sur tout élément ancêtre, en particulier \<html lang=\>.',
       table: {
-        type: { summary: 'The language of the map viewer user interface. May be specified on any ancestor element, especially \<html lang=\>. | La langue de l\'interface utilisateur du visualiseur de carte. Peut être spécifiée sur tout élément ancêtre, en particulier \<html lang=\>.' },
+        type: { summary: 'string' },
         defaultValue: { summary: 'en' },
       },
     },
     controls: {
       name: 'controls',
       control: 'boolean',
+      description: 'Enables or removes optional map controls. | Active ou supprime les contrôles de carte facultatifs.',
       table: {
-        type: { summary: 'Enables or removes optional map controls | Active ou supprime les contrôles de carte facultatifs' },
-        defaultValue: { summary: 'false, equivalent to absent controls attribute' },
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
       },
     },
     static: {
       name: 'static',
       control: 'boolean',
+      description: 'Disables map events and most interactive behaviour. Typically used in conjunction with controls attribute. | Désactive les événements de la carte et la plupart des comportements interactifs. Généralement utilisé conjointement avec l\'attribut controls.',
       table: {
-        type: { summary: 'Disables map events and most interactive behaviour. Typically used in conjunction with controls attribute. | Désactive les événements de la carte et la plupart des comportements interactifs. Généralement utilisé conjointement avec l\'attribut controls.' },
-        defaultValue: { summary: 'false, equivalent to absent static attribute, and the result is an interactive map.' }
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' }
       }
     },
     controlslist: {
       name: 'controlslist',
       control: 'multi-select',
       options: ['geolocation', 'search', 'nofullscreen', 'nozoom', 'nolayer', 'noreload', 'noscale'],
+      description: 'Space-separated list of case-insensitive string tokens of control name or "no"+control name. | Liste de jetons de chaîne insensibles à la casse séparés par des espaces, composée du nom du contrôle ou de « no » + le nom du contrôle.',
       table: {
-        type: { summary: 'Space-separated list of case-insensitive string tokens of control name or "no"+control name | Liste de jetons de chaîne insensibles à la casse séparés par des espaces, composée du nom du contrôle ou de « no » + le nom du contrôle' },
-        defaultValue: { summary: 'Empty string, equivalent to absent controlslist attribute.' },
+        type: { summary: 'string' },
+        defaultValue: { summary: "''" },
       },
     },
     caption: {
       name: '\<map-caption\>',
       control: { type: 'text' },
+      description: 'A string describing the purpose of the map. The \<map-caption\> element can be used to provide a screen reader-friendly caption or title for the map. | Une chaîne décrivant l\'objectif de la carte. L\'élément \<map-caption\> peut être utilisé pour fournir un titre ou une légende accessible aux lecteurs d\'écran.',
       table: {
-        type: { summary: 'A string describing the purpose of the map. The \<map-caption\> element can be used to provide a screen reader-friendly caption or title for the map. | Une chaîne décrivant l\'objectif de la carte. L\'élément \<map-caption\> peut être utilisé pour fournir un titre ou une légende accessible aux lecteurs d\'écran.' },
+        type: { summary: 'element' },
         defaultValue: { summary: '-' },
       },
     }
