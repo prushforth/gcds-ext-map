@@ -36,6 +36,17 @@
     max-width: var(--gcds-container-size-xl);
   }
 
+  #storybook-docs .sbdocs-wrapper,
+  #storybook-docs .sbdocs-content,
+  #storybook-docs .sbdocs-wrapper p,
+  #storybook-docs .sbdocs-wrapper li,
+  #storybook-docs .sbdocs-wrapper td,
+  #storybook-docs .sbdocs-wrapper th,
+  #storybook-docs .sbdocs-wrapper label {
+    font-family: var(--gcds-font-families-body) !important;
+    font-size: var(--gcds-font-sizes-text) !important;
+  }
+
   /* ----- OVERVIEW PAGE ----- */
   .intro-boxes {
     background-color: var(--gcds-color-grayscale-50);
@@ -779,4 +790,30 @@
   document.addEventListener('DOMContentLoaded', domContentLoadedHandler);
 
   // ----- End custom copy code buttons -----
+
+  // ----- For map and layer: Iframe auto-resize. Report document height to parent window -----
+  if (window.parent !== window) {
+    const reportHeight = () => {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: 'storybook-resize', height, src: window.location.href }, '*');
+    };
+    // document.body may not exist yet (this script is in <head>), so defer
+    const initObserver = () => {
+      const ro = new ResizeObserver(reportHeight);
+      ro.observe(document.documentElement);
+      reportHeight();
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initObserver);
+    } else {
+      initObserver();
+    }
+    window.addEventListener('load', reportHeight);
+    // Also report periodically for a few seconds to catch late-rendering content
+    let ticks = 0;
+    const poll = setInterval(() => {
+      reportHeight();
+      if (++ticks >= 20) clearInterval(poll);
+    }, 500);
+  }
 </script>
