@@ -524,6 +524,16 @@
   }
 
   function formatTable(table, lang) {
+    // Wrap table in a horizontally-scrollable container for narrow viewports
+    if (!table.parentElement.classList.contains('argstable-scroll-wrapper')) {
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('argstable-scroll-wrapper');
+      wrapper.style.overflowX = 'auto';
+      wrapper.style.maxWidth = '100%';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    }
+
     // Format table header
     const tableHead = [...table.querySelectorAll('th')];
     tableHead.forEach(th => {
