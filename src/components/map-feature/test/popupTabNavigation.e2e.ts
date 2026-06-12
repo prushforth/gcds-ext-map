@@ -252,7 +252,7 @@ test.describe('Playwright Keyboard Navigation + Query Layer Tests', () => {
       await page.keyboard.press('Enter');
       for (let i = 0; i < 6; i++) await page.keyboard.press('Tab');
       await page.keyboard.press('Enter');
-      const focusedElement = page.getByText('Maps for HTML Community Group');
+      const focusedElement = page.getByText('GC Design System - Maps');
       await expect(focusedElement).toBeFocused();
     });
 
