@@ -743,12 +743,7 @@ export class GcdsMap {
       // Expose on element for MapML compatibility
       (this.el as any)._zoomControl = this._zoomControl;
     }
-    if (
-      !this._searchButton &&
-      this._controlsList &&
-      this._controlsList.contains('search') &&
-      totalSize + 49 <= mapSize
-    ) {
+    if (!this._searchButton && totalSize + 49 <= mapSize) {
       totalSize += 49;
       this._searchButton = searchButton({ mapEl: this.el }).addTo(this._map);
       // Expose on element for MapML compatibility
@@ -828,12 +823,6 @@ export class GcdsMap {
             this._setControlsVisibility('geolocation', false);
             break;
           case 'search':
-            if (!this._searchButton) {
-              this._searchButton = searchButton({ mapEl: this.el }).addTo(
-                this._map
-              );
-              (this.el as any)._searchButton = this._searchButton;
-            }
             this._setControlsVisibility('search', false);
             break;
           case 'noscale':
