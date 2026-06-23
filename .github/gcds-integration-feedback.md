@@ -36,7 +36,7 @@ We also note the request referenced `@cdssnc/gcds-tokens` and `@cdssnc/gcds-font
 | `#f0f0f0` | `--gcds-bg-light` | `--gcds-bg-light` | `#f2f2f2` | Slightly lighter |
 | `#e3e3e3` | `--gcds-border-default` | `--gcds-color-grayscale-100` | `#e6e6e6` | Slightly lighter |
 | `#bbb` | disabled text token | `--gcds-disabled-text` | `#808080` | Significantly darker |
-| `rgb(0 0 0 / 30%)` | shadow token | *(no token)* | — | Kept as-is |
+| `rgb(0 0 0 / 30%)` | shadow token | *(component-scoped only; no generic shadow token)* | — | Kept as-is |
 | `rgb(222,225,230)` | — | *(no token)* | — | Kept as-is |
 | `rgb(60,64,67)` | — | `--gcds-text-secondary` | `#595959` | Different hue/lightness |
 | `lightgrey` | — | `--gcds-color-grayscale-150` | `#d9d9d9` | — |
