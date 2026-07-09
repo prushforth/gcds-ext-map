@@ -454,7 +454,8 @@ test.describe('gcds-map DOM API Tests', () => {
       '.leaflet-top.leaflet-left',
       (div) => div.childElementCount
     );
-    expect(leftControlCount).toBe(2);
+    // this includes the search control, though hidden
+    expect(leftControlCount).toBe(3);
 
     let zoomHidden = await page.$eval(
       '.leaflet-top.leaflet-left > .leaflet-control-zoom',

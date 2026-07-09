@@ -743,8 +743,10 @@ export class GcdsMap {
       // Expose on element for MapML compatibility
       (this.el as any)._zoomControl = this._zoomControl;
     }
-    if (!this._searchButton && totalSize + 49 <= mapSize) {
-      totalSize += 49;
+    if (!this._searchButton) {
+      // Note: search is opt-in (default hidden) so it occupies no
+      // vertical space until enabled by controlslist="search"; do not
+      // charge it against the mapSize budget here.
       this._searchButton = searchButton({ mapEl: this.el }).addTo(this._map);
       // Expose on element for MapML compatibility
       (this.el as any)._searchButton = this._searchButton;
