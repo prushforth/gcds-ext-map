@@ -1,7 +1,4 @@
 import { defineConfig, expect } from '@playwright/test';
-import { matchers } from '@stencil/playwright';
-
-expect.extend(matchers);
 
 export default defineConfig({
   testDir: './src',

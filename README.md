@@ -1,6 +1,6 @@
 # `<gcds-ext-map>`
 
-A Government of Canada Design System (GCDS) plugin component that provides an accessible, standards-based web map viewer using [MapML](https://maps4html.org/web-map-doc/). The main  difference between this component and that documentation is the name of the root map viewer element: `<gcds-ext-map>`
+A Government of Canada Design System (GCDS) extension map component that provides an accessible, standards-based web map viewer using [MapML](https://geo.ca/initiatives/mapml/).
 
 ## Installation
 
@@ -9,6 +9,16 @@ Install and use locally:
 ```bash
 npm install @gcds-extensions/gcds-ext-map
 ```
+
+## Verify your installation
+
+Run:
+
+```bash
+npx http-server node_modules/@gcds-extensions/gcds-ext-map -p 8080 -c-1
+```
+
+Open http://localhost:8080/demo/ — you should see an interactive map.
 
 ## Usage
 

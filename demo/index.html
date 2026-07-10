@@ -1,0 +1,78 @@
+<!doctype html>
+<!--
+  ============================================================================
+  RELEASE ARTIFACT — DO NOT edit paths casually.
+
+  This file is shipped inside the published @gcds-extensions/gcds-ext-map
+  package.  After a consumer runs `npm install @gcds-extensions/gcds-ext-map`
+  it lands at:
+
+      <consumer-project>/node_modules/@gcds-extensions/gcds-ext-map/demo/index.html
+
+  All resource paths here are RELATIVE and computed from THAT install
+  location — not from this repo's src/www layout.  They are intentionally
+  different from src/index.html (which uses /build/... paths for the Stencil
+  dev server) and must not be unified with it.
+
+  Path map (from demo/index.html inside node_modules):
+    ../dist/gcds-ext-map/...............  this package's own build output
+    ../../../@gcds-core/components/....   sibling peer-dep package in node_modules
+                                          ( demo/  -> gcds-ext-map/  -> @gcds-extensions/
+                                            -> node_modules/  ->  @gcds-core/components/ )
+
+  Consumer serve command (documented in README):
+      npx http-server node_modules -p 8080 -c-1
+      then open http://localhost:8080/@gcds-extensions/gcds-ext-map/demo/
+  ============================================================================
+-->
+<html dir="ltr" lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>&lt;gcds-ext-map&gt; component - composant</title>
+
+    <!-- gcds-ext-map component (this project's build output) -->
+    <script type="module" src="../dist/gcds-ext-map/gcds-ext-map.esm.js"></script>
+    <!-- Optionally, to use the full GCDS component system, also include: -->
+    <script type="module" src="../../../@gcds-core/components/dist/gcds/gcds.esm.js"></script>
+    <link rel="stylesheet" href="../../../@gcds-core/components/dist/gcds/gcds.css">
+
+    <style>gcds-ext-map { display: block; width: 100%; height: 400px;}</style>
+
+  </head>
+  <body>
+    <gcds-container size="xl" main-container centered tag="main">
+
+      <gcds-heading tag="h4">&lt;gcds-ext-map&gt; composant de carte </gcds-heading>
+
+      <gcds-ext-map id="map" width="640" height="480" lat="45.4215" lon="-75.6972" zoom="10" projection="CBMTILE" controls controlslist="search">
+        <map-layer checked src="../dist/gcds-ext-map/assets/mapml/fr/cbmtile/cbmt"></map-layer>
+      </gcds-ext-map>
+
+      <gcds-heading tag="h4">&lt;gcds-ext-map&gt; map component</gcds-heading>
+      <gcds-ext-map lang="en" id="map2" width="640" height="480" lat="45.4215" lon="-75.6972" zoom="10" projection="OSMTILE" controls controlslist="search">
+        <map-layer checked src="../dist/gcds-ext-map/assets/mapml/en/osmtile/cbmt"></map-layer>
+      </gcds-ext-map>
+
+      <gcds-heading tag="h2">Button</gcds-heading>
+
+        <gcds-button button-role="danger">Primary</gcds-button>
+
+      <gcds-heading tag="h2">Input</gcds-heading>
+
+        <gcds-input input-id="form-name" label="Name" hint="Please enter your full name."></gcds-input>
+
+      <gcds-heading tag="h2">Header</gcds-heading>
+
+      <gcds-header>
+        <gcds-search slot="search"></gcds-search>
+        <gcds-topic-menu slot="menu"></gcds-topic-menu>
+        <gcds-breadcrumbs slot="breadcrumb">
+          <gcds-breadcrumbs-item href="#">Design System</gcds-breadcrumbs-item>
+          <gcds-breadcrumbs-item href="#">Components</gcds-breadcrumbs-item>
+        </gcds-breadcrumbs>
+      </gcds-header>
+
+    </gcds-container>
+  </body>
+</html>

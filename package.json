@@ -1,7 +1,7 @@
 {
   "name": "@gcds-extensions/gcds-ext-map",
   "version": "1.0.0-rc",
-  "description": "Government of Canada Design System map component suite",
+  "description": "Government of Canada Design System extension - Map component (MapML) suite",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -9,10 +9,18 @@
   "collection:main": "dist/collection/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NRCan/gcds-ext-map.git"
+    "url": "git+https://github.com/gcds-extensions/gcds-ext-map.git"
   },
+  "bugs": {
+     "url": "https://github.com/gcds-extensions/gcds-ext-map/issues"
+  },
+  "homepage": "https://gcds-extensions.github.io/gcds-ext-map/en/",
   "files": [
-    "dist/"
+    "dist/",
+    "loader/",
+    "demo/",
+    "!dist/**/test/**",
+    "!dist/**/*.map"
   ],
   "scripts": {
     "prebuild": "node scripts/generate-locale.js",
@@ -35,7 +43,6 @@
     "@gcds-core/tokens": "^1.5.0",
     "@playwright/test": "^1.54.0",
     "@stencil/core": "^4.43.4",
-    "@stencil/playwright": "^0.2.1",
     "@storybook/addon-a11y": "^8.6.18",
     "@storybook/addon-actions": "^8.0.9",
     "@storybook/addon-essentials": "^8.0.9",
