@@ -60,7 +60,7 @@ Open http://localhost:8080/demo/ — you should see an interactive map.
 </gcds-ext-map>
 ```
 
-See [the map components documentation](https://nrcan.github.io/map/en/components/map-components/) for further usage examples.
+See [the map components documentation](https://nrcan.github.io/gcds-ext-map/en/components/map-components/) for further usage examples.
 
 ## Architecture
 
